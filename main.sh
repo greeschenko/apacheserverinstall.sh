@@ -34,6 +34,8 @@ sudo apt-get -y install phpmyadmin
 
 mkdir /home/www/${NAME}/
 mkdir /home/www/${NAME}/web/
+touch /home/www/${NAME}/web/index.php
+echo "<?php echo ${NAME}; ?>" >> /home/www/${NAME}/web/index.php
 
 touch /etc/apache2/sites-available/${NAME}-ssl.conf
 
