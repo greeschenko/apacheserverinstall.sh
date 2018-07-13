@@ -35,51 +35,51 @@ sudo apt-get -y install phpmyadmin
 mkdir /home/www/${NAME}/
 mkdir /home/www/${NAME}/web/
 touch /home/www/${NAME}/web/index.php
-echo "<?php echo ${NAME}; ?>" >> /home/www/${NAME}/web/index.php
+echo "<?php echo '${NAME} site under construction'; ?>" >> /home/www/${NAME}/web/index.php
 
-touch /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo touch /etc/apache2/sites-available/${NAME}-ssl.conf
 
 # setup hosts file
-echo "<VirtualHost *:80>" >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        ServerAdmin greeschenko@gmail.com" >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        ServerName  ${NAME}" >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        DocumentRoot /home/www/${NAME}/web/" >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        <Directory />" >>  /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "                Options Indexes FollowSymLinks MultiViews" >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "                AllowOverride All" >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "                Order allow,deny" >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "                allow from all" >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "                DirectoryIndex index.php" >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        </Directory>" >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        ServerAlias www.${NAME}" >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        ErrorLog /var/log/apache2/${NAME}_error.log" >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        CustomLog /var/log/apache2/${NAME}_asses.log combined" >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "</VirtualHost>" >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "<IfModule mod_ssl.c>"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "<VirtualHost *:443>"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        ServerAdmin greeschenko@gmail.com"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        ServerName  ${NAME}"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        ServerAlias www.${NAME}"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        DocumentRoot /home/www/${NAME}/web/"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        <Directory />"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "                Options Indexes FollowSymLinks MultiViews"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "                AllowOverride All"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "                Order allow,deny"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "                allow from all"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "                DirectoryIndex index.php"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        </Directory>"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        ErrorLog /var/log/apache2/${NAME}.log"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        CustomLog /var/log/apache2/${NAME}.log combined"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        SSLEngine on"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        SSLCertificateKeyFile /etc/apache2/crts/${NAME}/key.key"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        SSLCertificateFile    /etc/apache2/crts/${NAME}/crt.crt"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        SSLCACertificateFile /etc/apache2/crts/${NAME}/ca.bundle"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        #SSLCertificateChainFile /etc/apache2/crts/${NAME}/ca_1.crt"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        #SSLCertificateChainFile /etc/apache2/crts/${NAME}/ca_2.crt"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        #SSLVerifyClient require"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "        #SSLVerifyDepth  10"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "</VirtualHost>"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
-echo "</IfModule>"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "<VirtualHost *:80>" >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        ServerAdmin greeschenko@gmail.com" >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        ServerName  ${NAME}" >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        DocumentRoot /home/www/${NAME}/web/" >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        <Directory />" >>  /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "                Options Indexes FollowSymLinks MultiViews" >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "                AllowOverride All" >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "                Order allow,deny" >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "                allow from all" >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "                DirectoryIndex index.php" >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        </Directory>" >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        ServerAlias www.${NAME}" >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        ErrorLog /var/log/apache2/${NAME}_error.log" >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        CustomLog /var/log/apache2/${NAME}_asses.log combined" >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "</VirtualHost>" >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "<IfModule mod_ssl.c>"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "<VirtualHost *:443>"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        ServerAdmin greeschenko@gmail.com"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        ServerName  ${NAME}"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        ServerAlias www.${NAME}"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        DocumentRoot /home/www/${NAME}/web/"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        <Directory />"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "                Options Indexes FollowSymLinks MultiViews"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "                AllowOverride All"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "                Order allow,deny"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "                allow from all"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "                DirectoryIndex index.php"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        </Directory>"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        ErrorLog /var/log/apache2/${NAME}.log"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        CustomLog /var/log/apache2/${NAME}.log combined"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        SSLEngine on"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        SSLCertificateKeyFile /etc/apache2/crts/${NAME}/key.key"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        SSLCertificateFile    /etc/apache2/crts/${NAME}/crt.crt"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        SSLCACertificateFile /etc/apache2/crts/${NAME}/ca.bundle"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        #SSLCertificateChainFile /etc/apache2/crts/${NAME}/ca_1.crt"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        #SSLCertificateChainFile /etc/apache2/crts/${NAME}/ca_2.crt"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        #SSLVerifyClient require"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "        #SSLVerifyDepth  10"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "</VirtualHost>"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
+sudo echo "</IfModule>"  >> /etc/apache2/sites-available/${NAME}-ssl.conf
 
 mysqladmin -uroot -p${PASSWORD} create ${NAME}
 
@@ -106,4 +106,4 @@ sudo apt-get install -y vim
 sudo apt-get install -y mc
 sudo apt-get install -y gconf2
 
-echo "127.0.0.1    ${NAME}" >> /etc/hosts
+sudo echo "127.0.0.1    ${NAME}" >> /etc/hosts
