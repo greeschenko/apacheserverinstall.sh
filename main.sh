@@ -5,8 +5,8 @@ if [[ $# -ne 2 ]]; then
     echo "bash main.sh {project name} {mysql password}"
 fi
 
-NAME=`$1`
-PASSWORD=`$2`
+NAME=$1
+PASSWORD=$2
 
 # update / upgrade
 sudo add-apt-repository -y ppa:ondrej/php
